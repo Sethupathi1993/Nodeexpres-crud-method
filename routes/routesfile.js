@@ -1,18 +1,16 @@
 import express from "express"
+import { GetMethods,
+    PostMethod,
+    PutMethod,
+    DeleteMethod
+ } from "../controller/method-controler.js"
+
 
 const router= express.Router()
 
-router.get('/', (req, res)=>{
-    res.send(`This is Get method`)
-})
-router.post('/', (req, res)=>{
-    res.send(`This is Post method`)
-})
-router.put('/', (req, res)=>{
-    res.send(`This is Updated method`)
-})
-router.delete('/', (req, res)=>{
-    res.send(`This is Delete method`)
-})
+router.get('/',GetMethods )
+router.post('/',PostMethod)
+router.put('/:id', PutMethod)
+router.delete('/:id',  DeleteMethod)
 
 export default router
